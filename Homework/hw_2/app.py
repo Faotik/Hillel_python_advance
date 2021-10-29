@@ -1,4 +1,3 @@
-from os import makedirs
 from flask import Flask, render_template
 import json
 
