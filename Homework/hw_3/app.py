@@ -1,5 +1,4 @@
-from logging import fatal
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, request
 import json
 
 app = Flask(__name__)
