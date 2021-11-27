@@ -56,3 +56,5 @@ while True:
         print("Password okey")
         break
     print("Wrong password")
+
+input()
