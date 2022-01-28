@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<h1>Name: {{object.name}}</h1>
+
+<p><strong>Date of birth:</strong> {{ object.date_of_birth }}</p>
+<p><strong>Date of death:</strong> {{ object.date_of_death }}</p>
+
+<div style="margin-top: 60px">
+    <h4>Author`s books</h4>
+
+    {% for book in book_list %}
+        {% if book.author == object %}
+            <hr />
+            <li><a href="{{ book.get_absolute_url }}"> {{ book.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
