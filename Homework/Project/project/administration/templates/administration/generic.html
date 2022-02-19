@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    {% block head %}
+
+    {% endblock %}
+</head>
+<body>
+    {% if user.is_authenticated  %}
+        User: {{user.get_username}}
+
+        <a href="/logout">logout</a>
+    {% endif %}
+    <br>
+    <a href="/catalog/">catalog</a>
+    <a href="/delivery/">delivery-panel</a>
+    <a href="/administration/">admin-panel</a>
+    <hr>
+    {% block body %}
+
+    {% endblock %}
+</body>
+</html>
