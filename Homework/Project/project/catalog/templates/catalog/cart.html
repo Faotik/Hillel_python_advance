@@ -1,0 +1,21 @@
+{% extends "./generic.html" %}
+
+{% block body %}
+
+    <a href="/catalog">Back</a>
+    <br>
+    <br>
+    <br>
+
+    {% for item in cartItems %}
+        {{item.dish.name}} ({{item.dish.price}}) - {{item.count}} ({% widthratio item.dish.price 1 item.count%}) <a href="/catalog/add-cart-item/{{item.pk}}/1">Add 1</a> <a href="/catalog/subtract-cart-item/{{item.pk}}/1">Subtract 1</a>
+        <br>
+    {% endfor %}
+    <br>
+    <br>
+    <form action="/catalog/make-order/" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}

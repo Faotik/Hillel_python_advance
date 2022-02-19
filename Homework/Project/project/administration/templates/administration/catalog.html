@@ -1,0 +1,17 @@
+{% extends "D:\Git\Hillel_python_advance\Homework\Project\project\catalog\templates\catalog\generic.html" %}
+
+{% block body %}
+
+    <a href="/administration/">Back</a>
+    <br>
+    <br>
+    <a href="add-dish/">Add dish</a>
+    <br>
+    <br>
+    {% for dish in dishes %}
+        {{dish}}
+        <a href="edit-dish/{{dish.pk}}">Edit</a>
+        <br>
+        <br>
+    {% endfor %}
+{% endblock %}

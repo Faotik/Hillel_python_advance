@@ -1,0 +1,20 @@
+{% extends "D:\Git\Hillel_python_advance\Homework\Project\project\catalog\templates\catalog\generic.html" %}
+
+{% block body %}
+
+<style>
+    input, label {
+        vertical-align: top;
+    }
+</style>
+<a href="/administration/catalog">Back</a>
+<br>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+    <input type="submit">
+</form>
+{% endblock %}

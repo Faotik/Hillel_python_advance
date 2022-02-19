@@ -1,0 +1,22 @@
+{% extends "D:\Git\Hillel_python_advance\Homework\Project\project\catalog\templates\catalog\generic.html" %}
+
+{% block body %}
+
+<a href="/delivery">Back</a>
+<h2>Active order</h2>
+<br>
+<hr>
+{% for orderItems in orderItemsList %}
+    <p>Order {{orderItems.first.order.pk}}</p>
+    {% for item in orderItems %}
+    {{item.dish.name}} ({{item.dish.price}}) - {{item.count}}
+        ({% widthratio item.dish.price 1 item.count%})
+    <br>
+    {% endfor %}
+    <a href="/delivery/order/setOrderStatus/{{orderItems.first.order.pk}}/Finished">Complite</a>
+    <hr>
+{% endfor %}
+<br>
+<br>
+
+{% endblock %}

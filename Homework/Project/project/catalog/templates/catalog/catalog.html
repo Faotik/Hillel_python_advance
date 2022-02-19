@@ -1,0 +1,18 @@
+{% extends "./generic.html" %}
+
+{% block body %}
+
+    <a href="cart/">Cart</a>
+    <br>
+    <br>
+    <br>
+
+    {% for dish in dishes %}
+    {{dish.name}} - {{dish.price}}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <button type="submit" value="{{dish.pk}}" name="dish-id">Add to cart</button>
+    </form>
+    <br>
+    {% endfor %}
+{% endblock %}

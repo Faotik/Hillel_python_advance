@@ -1,0 +1,23 @@
+{% extends "./generic.html" %}
+
+{% block body %}
+<h2>Login</h2>
+
+<form method="POST" , action="">
+    {% csrf_token %}
+    Login
+    <input type="text" name="username">
+    <br>
+    <br>
+    Password
+    <input type="password" name="password">
+    <br>
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    <br>
+    <input type="submit">
+</form>
+
+<h4>Haven`t account? <a href="/registration">Registration</a></h4>
+{% endblock %}
